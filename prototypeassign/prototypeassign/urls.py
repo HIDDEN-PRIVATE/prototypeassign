@@ -27,5 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', Main.views.index, name='index'),
     re_path(r'^home$', Main.views.index, name='home'),
-    re_path(r'^outline$', Main.views.outline, name='outline')
+    path('outline/<int:id>/', Main.views.outline, name='outline')
 ]

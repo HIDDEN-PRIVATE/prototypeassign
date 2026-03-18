@@ -32,6 +32,9 @@
   <ItemGroup>
     <Compile Include="Main\admin.py" />
     <Compile Include="Main\apps.py" />
+    <Compile Include="Main\management\commands\importCSV.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Main\migrations\__init__.py" />
     <Compile Include="Main\models.py" />
     <Compile Include="Main\tests.py" />
@@ -50,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Main\" />
+    <Folder Include="Main\management\commands\" />
     <Folder Include="Main\migrations\" />
+    <Folder Include="Main\management\" />
     <Folder Include="Main\templates\" />
     <Folder Include="Main\templates\Main\" />
     <Folder Include="prototypeassign\" />

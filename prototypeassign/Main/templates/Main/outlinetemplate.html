@@ -7,5 +7,45 @@
 </head>
 <body>
     <a href="home">test</a>
+    <h1>Course: {{UnitName.UnitName}}</h1>
+    <table>
+        <tr>
+            <th>Unit Goals</th>
+        </tr>
+
+        {% for goals in Ugoals %}
+        <tr>
+            <td>{{goals.GoalName}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <table>
+        <tr>
+            <th>Content</th>
+        </tr>
+
+        {% for Content in UContent %}
+        <tr>
+            <td>{{Content.ContentName}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <table>
+        <tr>
+            <th>Assement</th>
+        </tr>
+
+        {% for UnitAssement in Assement %}
+        <tr>
+            <td>Name: {{UnitAssement.AssementName}}</td>
+            <td>Weight: {{UnitAssement.Weighting}}</td>
+            <td>Start Date: {{UnitAssement.StartDate}}</td>
+            <td>End Date: {{UnitAssement.EndDate}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
 </body>
 </html>

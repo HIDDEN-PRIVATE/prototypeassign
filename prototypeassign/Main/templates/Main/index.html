@@ -1,8 +1,9 @@
 <html>
-<head><title></title></head>
+<head><title>Home</title></head>
 
 <body>
 
+{% if content %}
 <table>
     <tr>
         <th>Master unit group</th>
@@ -14,19 +15,22 @@
         <th>Y12 Markbook</th>
         <th>Unit Outline Published</th>
     </tr>
-
+    {% for MasterUnit in content %}
     <tr>
-        <td><a href="outline">placeholder</a></td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
-        <td>placeholder</td>
+        <td><a href="outline/{{MasterUnit.id}}">{{MasterUnit.UnitName}}</a></td>
+        <td>{{MasterUnit.Course.Coursename}}</td>
+        <td>{{MasterUnit.ScalingGroup.ScalinggroupName}}</td>
+        <td>{{MasterUnit.YearEleven}}</td>
+        <td>{{MasterUnit.YearElvMarkbook}}</td>
+        <td>{{MasterUnit.YearTwelve}}</td>
+        <td>{{MasterUnit.YearTweMarkbook}}</td>
+        <td>{{MasterUnit.YearTweMarkbook}}</td>
     </tr>
+    {% endfor %}
 
 </table>
-
+{% else %}
+<strong>No data!</strong>
+{% endif %}
 </body>
 </html>
