@@ -26,6 +26,6 @@ urlpatterns = [
     #Uncomment the next line to enable the admin:
     path('admin/', admin.site.urls),
     re_path(r'^$', Main.views.index, name='index'),
-    re_path(r'^home$', Main.views.index, name='home'),
+    path('home', Main.views.index, name='home'),
     path('outline/<int:id>/', Main.views.outline, name='outline')
 ]

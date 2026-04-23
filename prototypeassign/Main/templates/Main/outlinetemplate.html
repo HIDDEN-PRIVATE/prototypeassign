@@ -3,11 +3,14 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>{{UnitName}}</title>
+    {% load static %} <!-- Instruct Django to load static files -->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'prototype.css' %}" />
 </head>
 <body>
-    <a href="home">test</a>
-    <h1>Course: {{UnitName.UnitName}}</h1>
+    <h1><a href="/home">Home</a></h1>
+    <h2>Course: {{UnitName.UnitName}}</h2>
     <table>
         <tr>
             <th>Unit Goals</th>

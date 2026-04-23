@@ -1,36 +1,71 @@
-<html>
-<head><title>Home</title></head>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="https://reneweconomy.com.au/wp-content/uploads/2018/02/act-government-logo.png">
+    {% load static %} <!-- Instruct Django to load static files -->
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 
+</head>
+ 
 <body>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Home</h1>
+    </div>
 
-{% if content %}
-<table>
-    <tr>
-        <th>Master unit group</th>
-        <th>Course</th>
-        <th>Scaling Group</th>
-        <th>Y11 Enrolled</th>
-        <th>Y11 markbook</th>
-        <th>Y12 Enrolled</th>
-        <th>Y12 Markbook</th>
-        <th>Unit Outline Published</th>
-    </tr>
-    {% for MasterUnit in content %}
-    <tr>
-        <td><a href="outline/{{MasterUnit.id}}">{{MasterUnit.UnitName}}</a></td>
-        <td>{{MasterUnit.Course.Coursename}}</td>
-        <td>{{MasterUnit.ScalingGroup.ScalinggroupName}}</td>
-        <td>{{MasterUnit.YearEleven}}</td>
-        <td>{{MasterUnit.YearElvMarkbook}}</td>
-        <td>{{MasterUnit.YearTwelve}}</td>
-        <td>{{MasterUnit.YearTweMarkbook}}</td>
-        <td>{{MasterUnit.YearTweMarkbook}}</td>
-    </tr>
-    {% endfor %}
+    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/home"> Home</a>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link">placeholder</p>
+                </li>
+                <li class="nav-item">
+                    <p class="nav-link">Account</p>
+                </li>
+            </ul>
 
-</table>
-{% else %}
-<strong>No data!</strong>
-{% endif %}
+        </div>
+
+    </nav>
+
+    <div>
+        <h2>Classes</h2>
+    </div>
+
+    {% if content %}
+    <table class="table table-hover">
+        <thead class="table-secondary">
+            <tr>
+                <th>Master unit group</th>
+                <th>Course</th>
+                <th>Scaling Group</th>
+                <th>Y11 Enrolled</th>
+                <th>Y11 markbook</th>
+                <th>Y12 Enrolled</th>
+                <th>Y12 Markbook</th>
+                <th>Unit Outline Published</th>
+            </tr>
+        </thead>
+        {% for MasterUnit in content %}
+        <tr>
+            <td><a href="outline/{{MasterUnit.id}}">{{MasterUnit.UnitName}}</a></td>
+            <td>{{MasterUnit.Course}}</td>
+            <td>{{MasterUnit.ScalingGroup.ScalinggroupName}}</td>
+            <td>{{MasterUnit.YearEleven}}</td>
+            <td>{{MasterUnit.YearElvMarkbook}}</td>
+            <td>{{MasterUnit.YearTwelve}}</td>
+            <td>{{MasterUnit.YearTweMarkbook}}</td>
+            <td>{{MasterUnit.YearTweMarkbook}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% else %}
+    <strong>No data!</strong>
+    {% endif %}
 </body>
 </html>

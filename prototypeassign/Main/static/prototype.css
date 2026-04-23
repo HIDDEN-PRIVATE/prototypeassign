@@ -1,0 +1,21 @@
+table, td, th {
+    border: 1px solid;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
+h1 {
+    background-color: steelblue;
+    color: whitesmoke;
+    
+}
+
+a:link {
+    text-decoration: none;
+}
+
+body {
+    padding-left: 10px;
+}
