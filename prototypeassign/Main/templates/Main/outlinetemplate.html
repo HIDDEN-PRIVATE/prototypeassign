@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>{{UnitName}}</title>
+    <link rel="icon" type="image/x-icon" href="https://reneweconomy.com.au/wp-content/uploads/2018/02/act-government-logo.png">
     {% load static %} <!-- Instruct Django to load static files -->
-    
-    <link rel="stylesheet" type="text/css" href="{% static 'prototype.css' %}" />
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
 </head>
 <body>
-    <h1><a href="/home">Home</a></h1>
+    <div class="container-fluid p-3 bg-primary text-white"> <!--might be able to import seperate page here-->
+        <h1><a class="link-light text-decoration-none" href="/home">ACS</a></h1>
+    </div>
     <h2>Course: {{UnitName.UnitName}}</h2>
-    <table>
+    <table class="table">
         <tr>
             <th>Unit Goals</th>
         </tr>
@@ -35,20 +40,30 @@
         {% endfor %}
 
     </table>
-    <table>
+    <table class="table">
         <tr>
             <th>Assement</th>
         </tr>
 
         {% for UnitAssement in Assement %}
         <tr>
-            <td>Name: {{UnitAssement.AssementName}}</td>
+            <td>{{UnitAssement.AssementName}}</td>
             <td>Weight: {{UnitAssement.Weighting}}</td>
             <td>Start Date: {{UnitAssement.StartDate}}</td>
             <td>End Date: {{UnitAssement.EndDate}}</td>
+            <td><a href="/delete/{{UnitAssement.id}}">delete</a></td>
         </tr>
         {% endfor %}
 
+
+
+
     </table>
+    <form action="" method="post">
+        <!--form for creating Assignments-->
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>

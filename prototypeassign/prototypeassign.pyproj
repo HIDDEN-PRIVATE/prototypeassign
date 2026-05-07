@@ -32,6 +32,9 @@
   <ItemGroup>
     <Compile Include="Main\admin.py" />
     <Compile Include="Main\apps.py" />
+    <Compile Include="Main\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Main\management\commands\importCSV.py">
       <SubType>Code</SubType>
     </Compile>
