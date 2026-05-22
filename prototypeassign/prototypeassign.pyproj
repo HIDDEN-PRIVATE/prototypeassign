@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Main\static\prototype.css" />
+    <Content Include="Main\templates\Main\FileUpload.html" />
     <Content Include="Main\templates\Main\index.html" />
     <Content Include="Main\templates\Main\layout.html" />
     <Content Include="Main\templates\Main\login.html" />

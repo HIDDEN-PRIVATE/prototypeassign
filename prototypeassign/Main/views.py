@@ -15,8 +15,8 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from io import BytesIO
 
 # imports models and forms from main
-from .models import Course, ScalingGroup, UnitGroup, Assements, ContentGroup, UnitGoals
-from .forms import InputForm
+from .models import Course, ScalingGroup, UnitGroup, Assements, ContentGroup, UnitGoals, Docu
+from .forms import InputForm, DocuForm
 
 #Authenciation for user accounts
 from django.contrib.auth.models import User, Group
@@ -143,3 +143,24 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect(index)
+
+def Document_create(request):
+
+    if request.method == 'POST':
+        form = DocuForm(request.POST, request.FILES)
+        if form.is_valid():
+            newdoc = Docu(docfile=request.FILES['docfile'])
+            newdoc.save
+        else:
+            messages.error(request, 'not valid')
+    else:
+        form = DocuForm()
+
+        documents = Docu.objects.all()
+
+
+    context = {
+            "documents": documents,
+            "form": form
+            }
+    return render(request, "Main/FileUpload.html", context)

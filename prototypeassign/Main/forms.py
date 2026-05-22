@@ -7,6 +7,8 @@ class InputForm(forms.ModelForm):
         model = Assements
         exclude = ['Unit']
 
+class DocuForm(forms.Form):
+    docfile = forms.FileField(label='upload a file')
 
         
     

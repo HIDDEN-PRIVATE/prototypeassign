@@ -31,5 +31,6 @@ urlpatterns = [
     path('delete/<int:id>', Main.views.assigndel, name="delete"),
     path('login', Main.views.login_view, name='login'),
     path('logout', Main.views.logout_view, name='logout'),
-    path('report/', Main.views.report, name = "report")
+    path('report/', Main.views.report, name = 'report'),
+    path('fileUpload/', Main.views.Document_create, name='Fileupload')
 ]
