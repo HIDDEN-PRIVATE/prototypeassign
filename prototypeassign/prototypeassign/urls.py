@@ -28,5 +28,8 @@ urlpatterns = [
     re_path(r'^$', Main.views.index, name='index'),
     path('home', Main.views.index, name='home'),
     path('outline/<int:id>/', Main.views.outline, name='outline'),
-    path('delete/<int:id>', Main.views.assigndel, name="delete")
+    path('delete/<int:id>', Main.views.assigndel, name="delete"),
+    path('login', Main.views.login_view, name='login'),
+    path('logout', Main.views.logout_view, name='logout'),
+    path('report/', Main.views.report, name = "report")
 ]

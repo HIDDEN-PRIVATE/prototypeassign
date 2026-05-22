@@ -52,6 +52,7 @@
   <ItemGroup>
     <Content Include="Main\static\prototype.css" />
     <Content Include="Main\templates\Main\index.html" />
+    <Content Include="Main\templates\Main\layout.html" />
     <Content Include="Main\templates\Main\login.html" />
     <Content Include="Main\templates\Main\outlinetemplate.html" />
     <Content Include="requirements.txt" />

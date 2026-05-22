@@ -5,8 +5,12 @@ from django.db import models
 class Course(models.Model):
     Coursename = models.CharField(max_length=25)
 
+    class Meta:
+
+        permissions = [("test", "this is a test"),]
     def __str__(self):
         return self.Coursename
+    
 
 class ScalingGroup(models.Model):
     ScalinggroupName = models.CharField(max_length=25)
@@ -29,6 +33,8 @@ class UnitGroup(models.Model):
     YearTwelve = models.BooleanField()
     #are students from Year twelve Markbook
     YearTweMarkbook = models.BooleanField()
+    # published
+    Published = models.BooleanField()
     def __str__(self):
         return self.UnitName
 
